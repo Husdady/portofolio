@@ -5,7 +5,7 @@ import { Component } from 'react';
 import ErrorMessage from '@elements/ErrorMessage';
 
 /* Librarys */
-// import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com';
 // import { Alert } from 'react-bootstrap';
 import { useAlert } from 'react-alert';
 
