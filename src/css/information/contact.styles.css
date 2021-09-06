@@ -8,6 +8,10 @@
   width: 55%;
 }
 
+.tm-form .form-control {
+  margin: .5rem;
+}
+
 .tm-form .form-control:focus {
   box-shadow: 0 0 4.5px 2px var(--bs-danger);
 } 
@@ -81,6 +85,9 @@
 @media (max-width: 960px) {
   .tm-contact {
     height: 500px;
+  }
+  .tm-form .form-control {
+    margin: .5rem 0;
   }
 }
 

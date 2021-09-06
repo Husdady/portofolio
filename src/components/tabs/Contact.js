@@ -85,14 +85,14 @@ const ContactForm = () => {
       <h2 className="mb-3 text-danger">¿Deseas contactame?</h2>
       <form onSubmit={handleSubmit}>
 
-        <input value={values.name} onChange={handleChangeName} className="form-control m-2" type="text" placeholder="Nombre" />
+        <input value={values.name} onChange={handleChangeName} className="form-control" type="text" placeholder="Nombre" />
         {errors.name && <ErrorMessage title={errors.name} />}
 
-        <input value={values.email} onChange={handleChangeEmail} className="form-control m-2" type="text" placeholder="Email" />
-        {errors.email && <ErrorMessage title={errors.email} style={{ paddingBottom: 8 }} />}
+        <input value={values.email} onChange={handleChangeEmail} className="form-control" type="text" placeholder="Email" />
+        {errors.email && <ErrorMessage title={errors.email} />}
 
-        <textarea value={values.message} onChange={handleChangeMessage} className="form-control mx-2 h-100" type="text" placeholder="Mensaje" />
-        {errors.message && <ErrorMessage title={errors.message} style={{ paddingTop: 8 }} />}
+        <textarea value={values.message} onChange={handleChangeMessage} className="form-control h-100" type="text" placeholder="Mensaje" />
+        {errors.message && <ErrorMessage title={errors.message} />}
 
         <button className="bg-danger text-white border-0 mt-4" type="submit">
           {

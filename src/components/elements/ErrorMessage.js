@@ -4,7 +4,8 @@ const styles = {
   paddingLeft: 10
   },
   icon: {
-    marginRight: 4
+    marginRight: 4,
+    fontSize: 14
   }
 }
 
@@ -12,7 +13,7 @@ const ErrorMessage = ({ title, style }) => {
   return (
     <div className="error-message" style={{...styles.container, ...style}}>
       <i className="fas fa-exclamation-circle" style={styles.icon} />
-      <span>{title}</span>
+      <small>{title}</small>
     </div>
   )
 }
