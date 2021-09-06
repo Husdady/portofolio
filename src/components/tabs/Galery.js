@@ -1,5 +1,5 @@
 /* React components */
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
 
 /* Librarys */
 import Gallery from 'react-grid-gallery';

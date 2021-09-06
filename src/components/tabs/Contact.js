@@ -5,8 +5,8 @@ import { Component } from 'react';
 import ErrorMessage from '@elements/ErrorMessage';
 
 /* Librarys */
-import emailjs from 'emailjs-com';
-import { Alert } from 'react-bootstrap';
+// import emailjs from 'emailjs-com';
+// import { Alert } from 'react-bootstrap';
 import { useAlert } from 'react-alert';
 
 /* JS */
@@ -18,8 +18,6 @@ import all_social_networks from '@assets/json/all_social_networks';
 
 /* CSS */
 import '@css/information/contact.styles.css';
-
-console.log(Alert.hide)
 
 const my_social_networks = all_social_networks.map((social, i) => (
   <a key={i} href={social.accountLink} target="_blank" rel="noreferrer" className="social text-center text-white">
@@ -64,20 +62,18 @@ const ContactForm = () => {
       message: ''
     },
     onSubmit: ({ values, resetForm }) => {
-      alert.show(<div style={{ color: 'blue' }}>Some Message</div>)
-      // showLoading();
-      // emailjs.send('service_w77s7rw', 'template_3ijn1hm', values, 'user_TZX75zWJPaZxTl2lacz5r')
-      //   .then((result) => {
-      //     console.log(result.text);
-      //   }, (error) => {
-      //     console.log(error.text);
-      //   });
-      // hideLoading();
-      // resetForm();
+      showLoading();
+      emailjs.send('service_w77s7rw', 'template_3ijn1hm', values, 'user_TZX75zWJPaZxTl2lacz5r')
+        .then((result) => {
+          console.log(result.text);
+        }, (error) => {
+          console.log(error.text);
+        });
+      hideLoading();
+      resetForm();
     }
   });
 
-  const alert = useAlert();
   const { isLoading, showLoading, hideLoading } = useLoading();
 
   const handleChangeName = e => setFieldValue('name', e.target.value);
@@ -106,14 +102,14 @@ const ContactForm = () => {
           }
         </button>
       </form>
-      <Alert variant='success' className="custom-alert d-flex justify-content-around align-items-center text-center">
+      {/* <Alert variant='success' className="custom-alert d-flex justify-content-around align-items-center text-center">
         <div>
           <i className="fas fa-check-circle" style={{ marginRight: 6 }} />
           <span>Se envió correctamente tu mensaje a mi correo personal</span>
         </div>
 
         <i className="fas fa-times-circle text-dark" style={{ marginRight: 6 }} />
-      </Alert>
+      </Alert> */}
     </div>
   )
 }
