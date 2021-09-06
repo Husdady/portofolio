@@ -39,7 +39,7 @@ img {
 }
 
 .text-right {
-  display: block;
+  display: block !important;
   text-align: right;
 }
 
