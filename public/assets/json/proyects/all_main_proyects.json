@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Emprendimiento y Salud",
+    "proyectImg": "img/proyects/emprendimientoysalud.webp",
+    "url": "https://emprendimientoysalud.com"
+  },
+  {
+    "name": "Nutrición y Salud Personal",
+    "proyectImg": "img/proyects/nutricionysaludpersonal.webp",
+    "url": "https://nutricionysaludpersonal.blogspot.com"
+  },
+  {
+    "name": "Multiservicios Espay",
+    "proyectImg": "img/proyects/multiservicios_espay.webp",
+    "url": "https://multiservicios-espay.netlify.com"
+  }
+]

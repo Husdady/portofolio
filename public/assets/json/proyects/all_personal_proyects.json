@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Calculadora",
+    "proyectImg": "img/proyects/calculadora.webp",
+    "url": "https://husdady.github.io/calculadora"
+  },
+  {
+    "name": "¿Cómo validar un formulario?",
+    "proyectImg": "img/proyects/validar-formulario.webp",
+    "url": "https://husdady.github.io/validar-formulario"
+  },
+  {
+    "name": "¿Cuánto sabes sobre el universo?",
+    "proyectImg": "img/proyects/cuanto-sabes-sobre-el-universo.webp",
+    "url": "https://husdady.github.io/cuanto-sabes-sobre-el-universo"
+  },
+  {
+    "name": "Creador de amistades",
+    "proyectImg": "img/proyects/creador-de-amistades.webp",
+    "url": "https://husdady.github.io/creador-de-amistades"
+  },
+  {
+    "name": "Simulador de compras",
+    "proyectImg": "img/proyects/simulador-de-compras.webp",
+    "url": "https://husdady.github.io/simulador-de-compras"
+  },
+  {
+    "name": "Multiservicios Espay",
+    "proyectImg": "img/proyects/multiservicios_espay.webp",
+    "delay": 2000
+  },
+  {
+    "name": "Multiservicios Espay",
+    "proyectImg": "img/proyects/multiservicios_espay.webp",
+    "delay": 2000
+  }
+]

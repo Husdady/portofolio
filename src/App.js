@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+/* React components */
+import { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+/* Components */
+import Profile from '@dist/Profile';
+import Information from '@dist/Information';
+import Footer from '@dist/Footer';
+
+export default class App extends Component {
+  render() {
+    return (
+      <div className="tm-container d-flex flex-wrap justify-content-between  pt-md-3 pt-xl-5 pb-md-3 px-xl-5 px-lg-3 px-md-2">
+        <Profile />
+        <Information />
+        <Footer />
+      </div>
+    );
+  }
 }
-
-export default App;

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "node",
+    "path": "img/skills/node.webp"
+  },
+  {
+    "name": "express",
+    "path": "img/skills/express.webp"
+  },
+  {
+    "name": "pug",
+    "path": "img/skills/pug.webp"
+  },
+  {
+    "name": "sass",
+    "path": "img/skills/sass.webp"
+  },
+  {
+    "name": "git",
+    "path": "img/skills/git.webp"
+  }
+]

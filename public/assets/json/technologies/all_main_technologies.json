@@ -1,0 +1,38 @@
+[
+  {
+    "name": "html",
+    "path": "img/skills/html.webp"
+  },
+  {
+    "name": "css",
+    "path": "img/skills/css.webp"
+  },
+  {
+    "name": "javascript",
+    "path": "img/skills/js.webp"
+  },
+  {
+    "name": "jquery",
+    "path": "img/skills/jquery.webp"
+  },
+  {
+    "name": "react",
+    "path": "img/skills/react.webp"
+  },
+  {
+    "name": "react-native",
+    "path": "img/skills/react-native.webp"
+  },
+  {
+    "name": "redux",
+    "path": "img/skills/redux.webp"
+  },
+  {
+    "name": "blogger",
+    "path": "img/skills/blogger.webp"
+  },
+  {
+    "name": "strapi",
+    "path": "img/skills/strapi.webp"
+  }
+]

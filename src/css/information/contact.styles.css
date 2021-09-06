@@ -1,0 +1,116 @@
+.tm-contact {
+  height: 100vh;
+  position: relative;
+}
+
+/* CONTACT FORM */
+.tm-form {
+  width: 55%;
+}
+
+.tm-form .form-control:focus {
+  box-shadow: 0 0 4.5px 2px var(--bs-danger);
+} 
+
+.tm-form textarea {
+  height: 200px !important;
+}
+
+.tm-form button {
+  padding: 10px 30px;
+  float: right;
+}
+
+/* SOCIAL NETWORKS */
+
+.tm-contact .tm-social {
+  width: 40%;
+  padding: 3% 5% 5%;
+  border-left: 3px solid var(--bs-danger);
+}
+
+.tm-contact .tm-social h4 {
+  margin-left: -20px
+}
+
+.all-social-networks .social {
+  display: block;
+  margin: 10px 0;
+  padding: 5px 30px;
+}
+
+.all-social-networks .social:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.all-social-networks .social:nth-of-type(1) {
+  background-color: #3b5998;
+}
+
+.all-social-networks .social:nth-of-type(2) {
+  color: #fff;
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+.all-social-networks .social:nth-of-type(2) b,
+.all-social-networks .social:nth-of-type(3) b {
+  font-weight: normal;
+}
+
+.all-social-networks .social:nth-of-type(3) {
+  background-color: var(--bs-green);
+}
+
+.all-social-networks .social:nth-of-type(4) {
+  background-color: #0e76a8;
+}
+
+.all-social-networks .social:nth-of-type(5) {
+  background-color: #171515;
+}
+
+.all-social-networks .social i {
+  margin-right: 5px;
+}
+
+@media (max-width: 960px) {
+  .tm-contact {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tm-contact {
+    flex-wrap: wrap;
+  }
+  .tm-form {
+    width: 100%;
+  }
+  .tm-contact .tm-social {
+    width: 100%;
+    margin-top: 30px;
+    border-top: 3px solid var(--bs-danger);
+    border-left: 0;
+  }
+  .all-social-networks {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .all-social-networks {
+    width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .all-social-networks {
+    width: 100%;
+  }
+}

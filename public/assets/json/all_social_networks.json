@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Facebook",
+    "iconName": "facebook-square",
+    "accountLink": "https://web.facebook.com/immanol.enrique.7"
+  },
+  {
+    "name": "Instagram",
+    "iconName": "instagram",
+    "accountLink": "https://www.instagram.com/imanol.enrique"
+  },
+  {
+    "name": "Whatsapp",
+    "iconName": "whatsapp",
+    "accountLink": "https://wa.me/send?phone=51952968893"
+  },
+  {
+    "name": "Linkedin",
+    "iconName": "linkedin",
+    "accountLink": "https://www.linkedin.com/in/imanol-enrique-sernaque-mena-164b7321a"
+  },
+  {
+    "name": "Github",
+    "iconName": "github",
+    "accountLink": "https://github.com/Husdady"
+  }
+  
+]
