@@ -1,6 +1,3 @@
-/* React components */
-import { Component } from 'react';
-
 /* Librarys */
 import Fade from 'react-reveal/Fade';
 
@@ -42,16 +39,15 @@ const getProyects = proyects => (
 const main_proyects = getProyects(all_main_proyects);
 const personal_proyects = getProyects(all_personal_proyects);
 
-export default class Proyects extends Component {
-  render() {
-    return (
-      <div className="text-white-50">
-        <h2 className="text-danger">Mis proyectos realizados como desarrollador</h2>
-        <h4 className="my-4 text-decoration-underline">Proyectos principales</h4>
-        {main_proyects}
-        <h4 className="my-4 text-decoration-underline">Proyectos personales</h4>
-        {personal_proyects}
-      </div>
-    )
-  }
+export default function Proyects() {
+  console.log('maita')
+  return (
+    <div className="text-white-50">
+      <h2 className="text-danger">Mis proyectos realizados como desarrollador</h2>
+      <h4 className="my-4 text-decoration-underline">Proyectos principales</h4>
+      {main_proyects}
+      <h4 className="my-4 text-decoration-underline">Proyectos personales</h4>
+      {personal_proyects}
+    </div>
+  )
 }

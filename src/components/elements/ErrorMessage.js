@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const styles = {
   container: {
     color: 'blanchedalmond',
@@ -9,13 +11,13 @@ const styles = {
   }
 }
 
-const ErrorMessage = ({ title, style }) => {
+const ErrorMessage = memo(({ title, style }) => {
   return (
     <div className="error-message" style={{...styles.container, ...style}}>
       <i className="fas fa-exclamation-circle" style={styles.icon} />
       <small>{title}</small>
     </div>
   )
-}
+})
 
 export default ErrorMessage;

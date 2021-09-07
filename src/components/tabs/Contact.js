@@ -1,13 +1,12 @@
 /* React components */
-import { Component } from 'react';
+import { useRef } from 'react';
 
 /* Components */
+import Alert from '@elements/Alert';
 import ErrorMessage from '@elements/ErrorMessage';
 
 /* Librarys */
 import emailjs from 'emailjs-com';
-// import { Alert } from 'react-bootstrap';
-// import { useAlert } from 'react-alert';
 
 /* JS */
 import useForm from '@assets/js/useForm';
@@ -26,15 +25,13 @@ const my_social_networks = all_social_networks.map((social, i) => (
   </a>
 ))
 
-export default class Contact extends Component {
-  render() {
-    return (
-      <div className="tm-contact justify-content-between align-items-center d-flex text-white-50">
-        <ContactForm />
-        <SocialNetworks />
-      </div>
-    )
-  }
+export default function Contact() {
+  return (
+    <div className="tm-contact justify-content-between align-items-center d-flex text-white-50">
+      <ContactForm />
+      <SocialNetworks />
+    </div>
+  )
 }
 
 const validateContactForm = {
@@ -64,11 +61,8 @@ const ContactForm = () => {
     onSubmit: ({ values, resetForm }) => {
       showLoading();
       emailjs.send('service_w77s7rw', 'template_3ijn1hm', values, 'user_TZX75zWJPaZxTl2lacz5r')
-        .then((result) => {
-          console.log(result.text);
-        }, (error) => {
-          console.log(error.text);
-        });
+        .then(() => refSuccessAlert.current.show(),
+          () => refDangerAlert.current.show());
       hideLoading();
       resetForm();
     }
@@ -79,6 +73,9 @@ const ContactForm = () => {
   const handleChangeName = e => setFieldValue('name', e.target.value);
   const handleChangeEmail = e => setFieldValue('email', e.target.value);
   const handleChangeMessage = e => setFieldValue('message', e.target.value);
+
+  const refSuccessAlert = useRef();
+  const refDangerAlert = useRef();
 
   return (
     <div className="tm-form">
@@ -102,17 +99,11 @@ const ContactForm = () => {
           }
         </button>
       </form>
-      {/* <Alert variant='success' className="custom-alert d-flex justify-content-around align-items-center text-center">
-        <div>
-          <i className="fas fa-check-circle" style={{ marginRight: 6 }} />
-          <span>Se envió correctamente tu mensaje a mi correo personal</span>
-        </div>
-
-        <i className="fas fa-times-circle text-dark" style={{ marginRight: 6 }} />
-      </Alert> */}
+      <Alert ref={refSuccessAlert} variant='success' title="Se envió correctamente tu mensaje a mi correo personal" />
+      <Alert ref={refDangerAlert} variant='danger' title="Se ha producido un error al enviar tu mensaje a mi correo personal" />
     </div>
   )
-}
+};
 
 const SocialNetworks = () => {
   return (

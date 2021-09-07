@@ -23,15 +23,5 @@
     "name": "Simulador de compras",
     "proyectImg": "img/proyects/simulador-de-compras.webp",
     "url": "https://husdady.github.io/simulador-de-compras"
-  },
-  {
-    "name": "Multiservicios Espay",
-    "proyectImg": "img/proyects/multiservicios_espay.webp",
-    "delay": 2000
-  },
-  {
-    "name": "Multiservicios Espay",
-    "proyectImg": "img/proyects/multiservicios_espay.webp",
-    "delay": 2000
   }
 ]

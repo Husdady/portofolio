@@ -81,10 +81,43 @@ img {
   right: 0;
 }
 
+/* Alert */
 .custom-alert {
-  width: 80%;
-  position: absolute !important;
+  width: 100%;
+  position: absolute;
   bottom: -5%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.hide_alert {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.hide_alert:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .custom-alert {
+    position: fixed;
+    top: 5%;
+    width: 95%;
+  }
+  .hide_alert {
+    right: 3%;
+  }
+}
+
+@media (max-width: 665px) {
+  .title_custom_alert {
+    display: block;
+  }
+  .hide_alert {
+    right: 1%;
+    top: 15%;
+  }
 }
