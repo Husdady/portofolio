@@ -52,7 +52,7 @@ const validateContactForm = {
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const showLoading = useCallback(() => setLoading(true), []);
-  const hideLoading = useCallback(() => setLoading(false), []);
+  const hideLoading = () => setLoading(false);
   const { values, setFieldValue, errors, handleSubmit } = useForm({
     validationSchema: validateContactForm,
     initialValues: {
@@ -60,9 +60,9 @@ const ContactForm = () => {
       email: '',
       message: ''
     },
-    onSubmit: ({ values, resetForm }) => {
+    onSubmit: async ({ values, resetForm }) => {
       showLoading();
-      emailjs.send('service_w77s7rw', 'template_3ijn1hm', values, 'user_TZX75zWJPaZxTl2lacz5r')
+      await emailjs.send('service_w77s7rw', 'template_3ijn1hm', values, 'user_TZX75zWJPaZxTl2lacz5r')
         .then(() => refSuccessAlert.current.show(),
           () => refDangerAlert.current.show());
       hideLoading();
