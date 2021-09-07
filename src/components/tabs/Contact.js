@@ -51,6 +51,7 @@ const validateContactForm = {
 }
 
 const ContactForm = () => {
+  const { isLoading, showLoading, hideLoading } = useLoading();
   const { values, setFieldValue, errors, handleSubmit } = useForm({
     validationSchema: validateContactForm,
     initialValues: {
@@ -67,8 +68,6 @@ const ContactForm = () => {
       resetForm();
     }
   });
-
-  const { isLoading, showLoading, hideLoading } = useLoading();
 
   const handleChangeName = e => setFieldValue('name', e.target.value);
   const handleChangeEmail = e => setFieldValue('email', e.target.value);
