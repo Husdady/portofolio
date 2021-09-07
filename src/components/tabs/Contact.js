@@ -1,5 +1,5 @@
 /* React components */
-import { useRef } from 'react';
+import { useRef, useState, useCallback } from 'react';
 
 /* Components */
 import Alert from '@elements/Alert';
@@ -10,7 +10,6 @@ import emailjs from 'emailjs-com';
 
 /* JS */
 import useForm from '@assets/js/useForm';
-import useLoading from '@assets/js/useLoading';
 
 /* JSON */
 import all_social_networks from '@assets/json/all_social_networks';
@@ -51,7 +50,9 @@ const validateContactForm = {
 }
 
 const ContactForm = () => {
-  const {  showLoading, hideLoading } = useLoading();
+  const [loading, setLoading] = useState(false);
+  const showLoading = useCallback(() => setLoading(true), []);
+  const hideLoading = useCallback(() => setLoading(false), []);
   const { values, setFieldValue, errors, handleSubmit } = useForm({
     validationSchema: validateContactForm,
     initialValues: {
@@ -91,12 +92,11 @@ const ContactForm = () => {
         {errors.message && <ErrorMessage title={errors.message} />}
 
         <button className="bg-danger text-white border-0 mt-4" type="submit">
-          {/* {
-            isLoading
+          {
+            loading
               ? <div className="spinner-border text-white" role="status" style={{ width: 24, height: 24 }} />
               : 'Enviar mensaje'
-          } */}
-          <div className="spinner-border text-white" role="status" style={{ width: 24, height: 24 }} />
+          }
         </button>
       </form>
       <Alert ref={refSuccessAlert} variant='success' title="Se envió correctamente tu mensaje a mi correo personal" />
