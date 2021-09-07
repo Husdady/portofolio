@@ -51,7 +51,7 @@ const validateContactForm = {
 }
 
 const ContactForm = () => {
-  const { isLoading, showLoading, hideLoading } = useLoading();
+  const {  showLoading, hideLoading } = useLoading();
   const { values, setFieldValue, errors, handleSubmit } = useForm({
     validationSchema: validateContactForm,
     initialValues: {
