@@ -91,11 +91,12 @@ const ContactForm = () => {
         {errors.message && <ErrorMessage title={errors.message} />}
 
         <button className="bg-danger text-white border-0 mt-4" type="submit">
-          {
+          {/* {
             isLoading
               ? <div className="spinner-border text-white" role="status" style={{ width: 24, height: 24 }} />
               : 'Enviar mensaje'
-          }
+          } */}
+          <div className="spinner-border text-white" role="status" style={{ width: 24, height: 24 }} />
         </button>
       </form>
       <Alert ref={refSuccessAlert} variant='success' title="Se envió correctamente tu mensaje a mi correo personal" />

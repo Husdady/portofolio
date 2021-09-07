@@ -121,3 +121,9 @@ img {
     top: 15%;
   }
 }
+
+@media (max-width: 454px) {
+  .hide_alert {
+    top: 12%;
+  }
+}
