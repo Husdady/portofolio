@@ -82,5 +82,11 @@
         "title": "Maya"
       }
     ]
+  },
+  {
+    "src": "https://i.imgur.com/gB08AUK.jpg",
+    "thumbnail": "https://i.imgur.com/gB08AUK.jpg",
+    "thumbnailWidth": 400,
+    "thumbnailHeight": 250
   }
 ]
