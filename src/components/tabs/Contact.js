@@ -52,7 +52,7 @@ const validateContactForm = {
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const showLoading = useCallback(() => setLoading(true), []);
-  const hideLoading = () => setLoading(false);
+  const hideLoading = useCallback(() => setLoading(false), []);
   const { values, setFieldValue, errors, handleSubmit } = useForm({
     validationSchema: validateContactForm,
     initialValues: {
