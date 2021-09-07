@@ -1,5 +1,5 @@
 /* React components */
-import { Component, PureComponent } from 'react';
+import { Component } from 'react';
 
 /* Components */
 import Skills from './Skills';
@@ -28,7 +28,7 @@ const getCurrentKey = key => {
   }
 }
 
-export default class Tabs extends PureComponent {
+export default class Tabs extends Component {
   state = {
     activeKey: "skills"
   }
