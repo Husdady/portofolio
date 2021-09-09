@@ -29,6 +29,7 @@
 
 .tm-page404 button {
   border: none;
+  line-height: inherit;
 }
 
 .tm-page404 button:hover {
