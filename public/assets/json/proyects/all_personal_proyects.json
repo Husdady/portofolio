@@ -23,5 +23,15 @@
     "name": "Simulador de compras",
     "proyectImg": "img/proyects/simulador-de-compras.webp",
     "url": "https://husdady.github.io/simulador-de-compras"
+  },
+  {
+    "name": "Pokedex",
+    "proyectImg": "img/proyects/simulador-de-compras.webp",
+    "url": "https://husdady.github.io/simulador-de-compras"
+  },
+  {
+    "name": "Medyfie",
+    "type": "app_mobile",
+    "proyectImg": "img/proyects/medyfie.jpg"
   }
 ]

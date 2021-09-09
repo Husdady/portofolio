@@ -8,6 +8,10 @@ import all_personal_proyects from '@assets/json/proyects/all_personal_proyects.j
 /* CSS */
 import '@css/information/proyects.styles.css';
 
+const styleImgForAppMobile = {
+  objectFit: 'contain'
+}
+
 const getProyects = proyects => (
   <div className="proyects">
     {
@@ -17,10 +21,12 @@ const getProyects = proyects => (
 
             <div className="proyect_img">
               <div className="absolute wrap" title={proyect.name} />
-              <a href={proyect.url} className="rounded py-2 text-center text-decoration-none">
-                <i className="fas fa-globe" />Ver sitio web
-              </a>
-              <img className="absolute" src={require('@assets/' + proyect.proyectImg).default} alt={proyect.name.toString()} />
+              {
+                proyect.url && <a href={proyect.url} className="rounded py-2 text-center text-decoration-none">
+                  <i className="fas fa-globe" />Ver sitio web
+                </a>
+              }
+              <img className="absolute" style={proyect.type === 'app_mobile' ? styleImgForAppMobile : null} src={require('@assets/' + proyect.proyectImg).default} alt={proyect.name.toString()} />
             </div>
 
             <div className="text-muted pt-3 border-bottom-2">
@@ -40,7 +46,6 @@ const main_proyects = getProyects(all_main_proyects);
 const personal_proyects = getProyects(all_personal_proyects);
 
 export default function Proyects() {
-  console.log('maita')
   return (
     <div className="text-white-50">
       <h2 className="text-danger">Mis proyectos realizados como desarrollador</h2>
