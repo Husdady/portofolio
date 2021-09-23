@@ -3,7 +3,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Catamaran';
+  font-family: 'Catamaran', sans-serif;
 }
 
 .tm-page404 h1 {
