@@ -1,0 +1,14 @@
+[
+  {
+    "name": "#Programmer",
+    "delay": 4000
+  },
+  {
+    "name": "#WebDeveloper",
+    "delay": 2000
+  },
+  {
+    "name": "#ReactDeveloper",
+    "delay": 3000
+  }
+]

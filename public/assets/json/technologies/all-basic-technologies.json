@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Jade",
+    "level": 30
+  },
+  {
+    "name": "Sass",
+    "level": 30
+  },
+  {
+    "name": "Git",
+    "level": 50
+  },
+  {
+    "name": "Webpack",
+    "level": 40
+  },
+  {
+    "name": "Typescript",
+    "level": 40
+  },
+  {
+    "name": "Bootstrap",
+    "level": 50
+  },
+  {
+    "name": "Python",
+    "level": 25
+  }
+]

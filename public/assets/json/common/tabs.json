@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Skills",
+    "eventKey": "skills",
+    "icon": "jedi"
+  },
+  {
+    "name": "Proyects",
+    "eventKey": "proyects",
+    "icon": "file-alt"
+  },
+  {
+    "name": "Gallery",
+    "eventKey": "galery",
+    "icon": "images"
+  },
+  {
+    "name": "Contact",
+    "eventKey": "contact",
+    "icon": "address-book"
+  }
+]

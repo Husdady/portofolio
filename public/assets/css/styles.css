@@ -2,7 +2,7 @@
   --tm-text-disabled: #495057;
   --tm-text: #c9d1d9;
   --tm-purple: #3C1A5B;
-  --tm-scrollbar: #240044
+  --tm-scrollbar: #240044;
 }
 
 ::-webkit-scrollbar {
@@ -15,10 +15,6 @@
 
 ::-webkit-scrollbar-thumb {
   background: var(--bs-red);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--bs-gray-600);
 }
 
 html, #root {
@@ -36,11 +32,6 @@ img {
 
 .border-opacity {
   border-bottom: 1px solid var(--bs-gray-700) !important
-}
-
-.text-right {
-  display: block !important;
-  text-align: right;
 }
 
 .nav-link {
@@ -73,14 +64,6 @@ img {
   z-index: 9999;
 }
 
-.absolute {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
 /* Alert */
 .custom-alert {
   width: 100%;
@@ -99,6 +82,14 @@ img {
 
 .hide_alert:hover {
   cursor: pointer;
+}
+
+.progress-bar {
+  transition: width linear 4s !important;
+}
+
+.bg-orange {
+  background-color: var(--bs-orange);
 }
 
 @media (max-width: 960px) {

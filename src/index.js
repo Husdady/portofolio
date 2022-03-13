@@ -1,9 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// React
+import { render } from 'react-dom';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+// Components
+import App from './App';
+
+// Librarys
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faJedi,
+  faFileAlt,
+  faImages,
+  faAddressBook,
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faJedi, faFileAlt, faAddressBook, faImages);
+
+const root = document.getElementById('root');
+
+render(<App />, root);

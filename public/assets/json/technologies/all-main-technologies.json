@@ -1,0 +1,54 @@
+[
+  {
+    "name": "HTML",
+    "level": 90
+  },
+  {
+    "name": "CSS",
+    "level": 90
+  },
+  {
+    "name": "Javascript",
+    "level": 90
+  },
+  {
+    "name": "Jquery",
+    "level": 50
+  },
+  {
+    "name": "React.js",
+    "level": 90
+  },
+  {
+    "name": "React Native",
+    "level": 60
+  },
+  {
+    "name": "Redux",
+    "level": 65
+  },
+  {
+    "name": "Strapi",
+    "level": 50
+  },
+  {
+    "name": "Node",
+    "level": 60
+  },
+  {
+    "name": "Express",
+    "level": 60
+  },
+  {
+    "name": "GraphQL",
+    "level": 70
+  },
+  {
+    "name": "Vue.js",
+    "level": 50
+  },
+  {
+    "name": "Ant Design",
+    "level": 75
+  }
+]
