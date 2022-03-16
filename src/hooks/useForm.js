@@ -3,13 +3,11 @@ import { useEffect, useState, useCallback } from 'react';
 
 // Custom hooks
 import useValidations from "./useValidations";
-import useValidateForm from "./useValidateForm";
 
 const useForm = ({
 	initialValues = {},
 	validationSchema = {},
 	validateOnChange = true,
-	validateAllFields = false,
 	onSubmit = function() { return null }
 }) => {
 
@@ -22,20 +20,20 @@ const useForm = ({
 	const getRulesSchema = validationSchema ? Object.values(validationSchema) : [];
 	const getFieldsFromSchema = validationSchema ? schemaFields : [];
 
-	const { isObject, isEmptyObject, isFunction } = useValidations();
-	const { validateField } = useValidateForm();
+	const { isObject, isEmptyObject, isFunction, validateSchemaField } = useValidations();
 
   useEffect(() => {
     verifyIfIsValidForm();
   }, []);
 
-	// Ejecutar validación en el evento 'onSubmit' del formulario para saber si existen errores
-  const runValidationSubmit = ({ errors, extraData = {} }) => {
-    // Setear errores
-    setErrors(errors);
 
+	// Ejecutar validación en el evento 'onSubmit' del formulario para saber si existen errores
+  const runValidationSubmit = useCallback(({ schemaErrors, extraData = {} }) => {
+    // Setear errores
+    setErrors(schemaErrors);
+    
     // Si no existen errores en el formulario
-    if (isEmptyObject(errors)) {
+    if (isEmptyObject(schemaErrors)) {
       // Setear formulario válido
       setValidForm(true);
     	setFormHasBeenEdited(true);
@@ -56,10 +54,11 @@ const useForm = ({
         });
       }
     }
-  }
+  }, [values]);
+
 
 	// Validar las reglas del esquema
-  const runValidationSchemaRules = (field, value) => {
+  const runValidationSchemaRules = useCallback((field, value) => {
     // Obtener reglas del campo (required, min, max, etc)
     const fieldRules = validationSchema[field];
 
@@ -113,18 +112,18 @@ const useForm = ({
     }
 
     // Validar campos del esquema
-    const errors = validateField(rules);
+    const errorsFromSchema = validateSchemaField(rules);
 
     // Retornar errores encontrados en un campo
-    return errors;
-  }
+    return errorsFromSchema;
+  }, []);
 
 
 	// Validar errores en los campos del esquema
-	const	runValidationErrors = useCallback((field, newErrors) => {console.log('[runValidationErrors]')
+	const	runValidationErrors = useCallback((field, newErrors) => {
 		const currentErrors = { ...errors };
-		const withOutErrors = isEmptyObject(errors) && isEmptyObject(newErrors);
 
+		const withOutErrors = isEmptyObject(errors) && isEmptyObject(newErrors);
     // Si no existen errores, finalizar validación
     if (withOutErrors) return;
 
@@ -140,7 +139,7 @@ const useForm = ({
 
 
 	// Validar todos los campos
-	const	runValidateAllFields = (extraData) => {
+	const	runValidateAllFields = useCallback((extraData) => {
 		if (!validationSchema) return;
 
 		const schemaErrors = getRulesSchema.reduce((acc, _, i) => {
@@ -154,10 +153,10 @@ const useForm = ({
 
     // Validar evento submit
     runValidationSubmit({
-      errors: schemaErrors,
+      schemaErrors: schemaErrors,
       extraData: extraData,
     });
-	};
+	}, [values]);
 
 
   // Setear un campo
@@ -186,7 +185,7 @@ const useForm = ({
 
     // Actualizar estado
     return setValues(newState);
-	}, [values]);
+	}, [values, errors]);
 
 
   // Setear múltiples campos
@@ -203,10 +202,11 @@ const useForm = ({
 
 
   // Método que se ejecuta cuando el formulario es válido
-	const	handleSubmit = useCallback((e) => {
+	const	handleSubmit = useCallback((e, extraData = {}) => {
 		e.preventDefault();
-		return runValidateAllFields();
-	}, []);
+		return runValidateAllFields(extraData);
+	}, [values]);
+
 
   // Verificar si es formulario válido
   const verifyIfIsValidForm = useCallback(() => {

@@ -13,7 +13,16 @@ import {
   faAddressBook,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faJedi, faFileAlt, faAddressBook, faImages);
+import { fab, faFacebookSquare, faTwitter, faInstagram,  } from "@fortawesome/free-brands-svg-icons";
+
+library.add(
+	fab,
+	faJedi,
+	faFileAlt,
+	faAddressBook,
+	faImages,
+	faFacebookSquare, faTwitter, faInstagram, 
+);
 
 const root = document.getElementById('root');
 

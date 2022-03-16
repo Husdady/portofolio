@@ -12,25 +12,11 @@
   height: 300px !important;
 }
 
-.tm-form button {
-  padding: 10px 30px;
-  float: right;
-}
-
-.tm-contact .tm-social {
-  width: 40%;
-  padding: 3% 5% 5%;
-  border-left: 3px solid var(--bs-danger);
-}
-
-.tm-contact .tm-social h4 {
-  margin-left: -20px
-}
-
 .all-social-networks .social {
-  display: block;
-  margin: 10px 0;
-  padding: 5px 30px;
+  padding: 8px 30px;
+  border-radius: 20px !important;
+  font-family: 'Lato', sans-serif;
+  font-size: .90em;
 }
 
 .all-social-networks .social:hover {
@@ -72,20 +58,12 @@
   margin-right: 5px;
 }
 
-@media (max-width: 960px) {
-  .tm-contact {
-    max-height: 500px;
-  }
-}
-
 @media (max-width: 768px) {
-  .tm-contact {
-    flex-wrap: wrap;
-  }
   .tm-form {
     width: 100%;
   }
-  .tm-contact .tm-social {
+
+  .tm-social {
     width: 100%;
     margin-top: 30px;
     border-top: 3px solid var(--bs-danger);

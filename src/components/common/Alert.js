@@ -1,10 +1,14 @@
+// React
 import { memo, useState, useCallback, forwardRef, useImperativeHandle } from 'react';
 
-/* Librarys */
+// Librarys
 import { Alert } from 'react-bootstrap';
-import Bounce from 'react-reveal/Bounce';
+import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+
+// Hooks
+import { useClasses } from "@hooks";
 
 const getAlertIcon = (variant) => {
   const config = {
@@ -15,7 +19,7 @@ const getAlertIcon = (variant) => {
   return config[variant];
 }
 
-const CustomAlert = forwardRef(({ variant, title }, ref) => {
+const CustomAlert = forwardRef(({ title, variant, className }, ref) => {
 
   const [visible, setVisible] = useState(false);
 
@@ -25,19 +29,28 @@ const CustomAlert = forwardRef(({ variant, title }, ref) => {
 
   useImperativeHandle(ref, handleRef);
 
+  const alertClasses = useClasses({
+    className: className,
+    defaultClasses: ["text-center"]
+  });
+
   if (!visible) return null;
 
   const icon = getAlertIcon(variant);
   
   return (
-    <div className="custom-alert">
-      <Bounce>
-        <Alert variant={variant} className="text-center">
-          <div>{icon}<span className="title_custom_alert">{title}</span></div>
-          <i onClick={hideAlert} className="fas fa-times-circle text-dark hide_alert" />
-        </Alert>
-      </Bounce>
-    </div>
+    <Fade bottom big collapse>
+      <Alert variant={variant} className={alertClasses}>
+        <div>{icon}<span className="title-custom-alert">{title}</span></div>
+
+        <FontAwesomeIcon
+          role="button"
+          onClick={hideAlert}
+          icon={faTimesCircle}
+          className="text-black-50 close-custom-alert"
+        />
+      </Alert>
+    </Fade>
   )
 });
 

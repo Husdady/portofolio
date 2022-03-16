@@ -1,27 +1,27 @@
 [
   {
     "name": "Facebook",
-    "iconName": "facebook-square",
+    "icon": "facebook-square",
     "accountLink": "https://web.facebook.com/immanol.enrique.7"
   },
   {
     "name": "Instagram",
-    "iconName": "instagram",
+    "icon": "instagram",
     "accountLink": "https://www.instagram.com/imanol.enrique"
   },
   {
     "name": "Whatsapp",
-    "iconName": "whatsapp",
+    "icon": "whatsapp",
     "accountLink": "https://wa.me/send?phone=51952968893"
   },
   {
     "name": "Linkedin",
-    "iconName": "linkedin",
-    "accountLink": "https://www.linkedin.com/in/imanol-enrique-sernaque-mena-164b7321a"
+    "icon": "linkedin",
+    "accountLink": "https://www.linkedin.com/in/imanol-enriqu%C3%AB/"
   },
   {
     "name": "Github",
-    "iconName": "github",
+    "icon": "github",
     "accountLink": "https://github.com/Husdady"
   }
   

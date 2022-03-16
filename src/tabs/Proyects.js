@@ -2,7 +2,6 @@
 import { Button } from "@common";
 
 // Librarys
-// import Fade from 'react-reveal/Fade';
 import { Row, Col, Image, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile, faGlobe } from "@fortawesome/free-solid-svg-icons";
@@ -28,13 +27,10 @@ const renderProyectUrl = (proyectUrl) => {
 
   return (
     <Button
+      icon={faGlobe}
       title="See website"
       onClick={goToProyect}
       className="proyect-url position-absolute rounded py-2 text-center text-decoration-none"
-      icon={{
-        name: faGlobe,
-        className: "me-2"
-      }}
     />
   )
 }
@@ -63,7 +59,7 @@ const renderProyects = (proyects) => {
         style={{ borderBottom: "1px solid var(--bs-gray-700)" }}
         className="d-flex justify-content-center text-muted pt-3 border-bottom-2 w-100 pb-2"
       >
-        <FontAwesomeIcon icon={faFile} className="me-2" />
+        {<FontAwesomeIcon icon={faFile} className="me-2" />}
         <h6 className="mb-0">{proyect.name}</h6>
       </section>
     </Col>

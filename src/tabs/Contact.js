@@ -1,31 +1,29 @@
 // React
-import { useRef, useState, useCallback } from 'react';
+import { Fragment, useRef, useCallback } from 'react';
 
 // Components
-import { Alert, renderError } from '@common';
+import { Alert, renderError, Button } from '@common';
 
 // Librarys
-import emailjs from 'emailjs-com';
-import { Container } from "react-bootstrap";
+import { Container, Badge } from "react-bootstrap";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// Services
+import sendEmailMessage from "@services/sendEmailMessage";
 
 // Hooks
 import { useForm } from '@hooks';
 
 // JSON
-// import all_social_networks from '@assets/json/contact/all-social-networks';
-
-// const my_social_networks = all_social_networks.map((social, i) => (
-//   <a key={i} href={social.accountLink} target="_blank" rel="noreferrer" className="social text-center text-white">
-//     <i className={`fab fa-${social.iconName}`} />
-//     <span>{social.name}</span>
-//   </a>
-// ))
+import all_social_networks from '@assets/json/contact/all-social-networks';
 
 export default function Contact() {
   return (
-    <div className="tm-contact text-white-50">
+    <Fragment>
       <ContactForm />
-    </div>
+      <SocialNetworks />
+    </Fragment>
   )
 }
 
@@ -47,9 +45,9 @@ const validateContactForm = {
 }
 
 const ContactForm = () => {
-  const [loading, setLoading] = useState(false);
-  const showLoading = useCallback(() => setLoading(true), []);
-  const hideLoading = useCallback(() => setLoading(false), []);
+  const refSubmitButton = useRef(null);
+  const refSuccessAlert = useRef(null);
+  const refDangerAlert = useRef(null);
 
   const { values, setFieldValue, errors, handleSubmit } = useForm({
     validationSchema: validateContactForm,
@@ -58,35 +56,48 @@ const ContactForm = () => {
       email: '',
       message: ''
     },
-    onSubmit: async ({ values, resetForm }) => {
-      showLoading();
-      await emailjs.send('service_w77s7rw', 'template_3ijn1hm', values, 'user_TZX75zWJPaZxTl2lacz5r')
-        .then(() => refSuccessAlert.current.show(),
-          () => refDangerAlert.current.show());
-      hideLoading();
-      resetForm();
-    }
+    onSubmit: function(formData) {
+      return sendEmailMessage({
+        ...formData,
+        refs: {
+          successAlert: refSuccessAlert,
+          dangerAlert: refDangerAlert,
+        }
+      })
+    },
   });
+  
 
+  // Setear nombre de la persona
   const handleChangeName = useCallback((e) => {
     return setFieldValue('name', e.target.value);
   }, [values]);
 
+
+  // Setear correo electrónico de la persona
   const handleChangeEmail = useCallback((e) => {
     return setFieldValue('email', e.target.value);
   }, [values]);
 
+
+  // Setear mensaje opcional de la persona
   const handleChangeMessage = useCallback((e) => {
     return setFieldValue('message', e.target.value);
   }, [values]);
 
-  const refSuccessAlert = useRef(null);
-  const refDangerAlert = useRef(null);
-  
+
+  // Evento 'submit' en formulario
+  const handleSubmitForm = (e) => {
+    return handleSubmit(e, {
+      showLoading: refSubmitButton.current.showLoading,
+      hideLoading: refSubmitButton.current.hideLoading,
+    })
+  };
+
   return (
     <Container fluid className="tm-form px-0 px-md-3 px-lg-3">
       <h2 className="mb-3 text-danger">Do you want to contact me?</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitForm}>
 
         <input value={values.name} onChange={handleChangeName} className="form-control" type="text" placeholder="Fullname" />
         {renderError(errors.name)}
@@ -97,25 +108,49 @@ const ContactForm = () => {
         <textarea value={values.message} onChange={handleChangeMessage} className="form-control h-100" type="text" placeholder="Message" />
         {renderError(errors.message)}
 
-        <button className="bg-danger text-white border-0 mt-4" type="submit">
-          {
-            loading
-              ? <div className="spinner-border text-white" role="status" style={{ width: 24, height: 24 }} />
-              : 'Send message'
-          }
-        </button>
+        <Button
+          ref={refSubmitButton}
+          icon={faPaperPlane}
+          title="Send message"
+          style={{ padding: "10px 30px" }}
+          loading={{ style: { marginLeft: 40, marginRight: 40 } }}
+          className="bg-danger text-white mt-4 rounded d-block ms-auto"
+        />
       </form>
-      <Alert ref={refSuccessAlert} variant='success' title="Se envió correctamente tu mensaje a mi correo personal" />
-      <Alert ref={refDangerAlert} variant='danger' title="Se ha producido un error al enviar tu mensaje a mi correo personal" />
+
+      {/* Alerta de éxito */}
+      <Alert
+        ref={refSuccessAlert}
+        variant="success"
+        className="mt-4"
+        title="Your message was successfully sent to my personal email"
+      />
+
+      {/* Alerta de error */}
+      <Alert
+        ref={refDangerAlert}
+        variant="danger"
+        className="mt-4"
+        title="There was an error sending your message to my personal email"
+      />
     </Container>
   )
 };
 
-// const SocialNetworks = () => {
-//   return (
-//     <div className="tm-social">
-//       <h4 className="mb-4">Mis redes sociales:</h4>
-//       <div className="all-social-networks">{my_social_networks}</div>
-//     </div>
-//   )
-// }
+const my_social_networks = all_social_networks.map((social, i) => (
+  <Badge className="social rounded-0 m-1 fw-normal">
+    <a href={social.accountLink} rel="noreferrer" className="text-white" target="_blank">
+      <FontAwesomeIcon icon={["fab", social.icon]} className="me-2" />
+      <span>{social.name}</span>
+    </a>
+  </Badge>
+))
+
+const SocialNetworks = () => {
+  return (
+    <Container fluid as="section" className="tm-form mt-2 px-0 px-md-3 px-lg-3">
+      <h2 className="text-danger">My social networks:</h2>
+      <div className="all-social-networks mt-3 text-center">{my_social_networks}</div>
+    </Container>
+  )
+}

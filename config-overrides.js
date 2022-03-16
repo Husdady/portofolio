@@ -5,6 +5,7 @@ module.exports = {
     alias({
       "@styles": "./src/styles",
       "@assets": "./public/assets",
+      "@services": "./src/services",
       "@tabs": "./src/tabs/_exports",
       "@hooks": "./src/hooks/_exports",
       "@common": "./src/components/common/_exports",

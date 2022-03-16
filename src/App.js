@@ -16,7 +16,6 @@ import '@styles/page-not-found/index.css';
 import '@styles/profile/index.css';
 import '@styles/tabs/contact.css';
 import '@styles/tabs/index.css';
-import '@styles/tabs/skills.css';
 import '@styles/tabs/proyects.css';
 
 const Main = () => {
