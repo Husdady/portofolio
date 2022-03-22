@@ -1,13 +1,13 @@
 [
   {
+    "name": "Universal Pokedex",
+    "proyectImg": "img/proyects/universal-pokedex.webp",
+    "url": "https://universal-pokedex.netlify.app"
+  },
+  {
     "name": "Calculadora",
     "proyectImg": "img/proyects/calculadora.webp",
     "url": "https://husdady.github.io/calculadora"
-  },
-  {
-    "name": "¿Cómo validar un formulario?",
-    "proyectImg": "img/proyects/validar-formulario.webp",
-    "url": "https://husdady.github.io/validar-formulario"
   },
   {
     "name": "¿Cuánto sabes sobre el universo?",
@@ -25,9 +25,9 @@
     "url": "https://husdady.github.io/simulador-de-compras"
   },
   {
-    "name": "Universal Pokedex",
-    "proyectImg": "img/proyects/universal-pokedex.webp",
-    "url": "https://universal-pokedex.netlify.app"
+    "name": "¿Cómo validar un formulario?",
+    "proyectImg": "img/proyects/validar-formulario.webp",
+    "url": "https://husdady.github.io/validar-formulario"
   },
   {
     "name": "Medyfie",

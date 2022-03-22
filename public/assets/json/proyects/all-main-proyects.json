@@ -5,13 +5,29 @@
     "url": "https://emprendimientoysalud.com"
   },
   {
+    "name": "CMS - Emprendimiento y Salud",
+    "proyectImg": "img/proyects/dashboard-emprendimientoysalud.webp",
+    "url": "https://emprendimientoysalud.herokuapp.com",
+    "extraMessage": "You are visiting the \"CMS - Emprendimiento y Salud\" project, you need a user account to log in to the application. Users are controlled by a single administrator user, so we offer you the following user so you can tour the application: email: test.user@gmail.com and password: \"user1234.\""
+  },
+  {
     "name": "Nutrición y Salud Personal",
     "proyectImg": "img/proyects/nutricionysaludpersonal.webp",
     "url": "https://nutricionysaludpersonal.blogspot.com"
   },
   {
     "name": "Multiservicios Espay",
-    "proyectImg": "img/proyects/multiservicios_espay.webp",
+    "proyectImg": "img/proyects/multiservicios-espay.webp",
     "url": "https://multiservicios-espay.netlify.com"
+  },
+  {
+    "name": "Intellitec",
+    "proyectImg": "img/proyects/intellitec.webp",
+    "url": "https://intellitec.pe"
+  },
+  {
+    "name": "Movies Awards Ballot",
+    "proyectImg": "img/proyects/movies-awards-ballot.webp",
+    "url": "https://husdady.github.io/movie-awards-ballot"
   }
 ]
