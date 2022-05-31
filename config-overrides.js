@@ -3,8 +3,8 @@ const { alias } = require('react-app-rewire-alias')
 module.exports = {
   webpack: (config) => {
     alias({
-      '@styles': './src/styles',
-      '@assets': './public/assets',
+      '@assets': './src/assets',
+      '@styles': './src/assets/styles',
       '@services': './src/services',
       '@hooks': './src/hooks/_exports',
       '@layouts': './src/components/layouts',
