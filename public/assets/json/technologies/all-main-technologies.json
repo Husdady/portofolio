@@ -50,5 +50,17 @@
   {
     "name": "Ant Design",
     "level": 75
+  },
+  {
+    "name": "Typescript",
+    "level": 50
+  },
+  {
+    "name": "Git",
+    "level": 50
+  },
+  {
+    "name": "Bootstrap",
+    "level": 80
   }
 ]

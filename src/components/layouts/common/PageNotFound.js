@@ -1,15 +1,14 @@
 // React
-import { useCallback } from "react";
+import { useCallback } from 'react'
 
 // Components
-import { Button } from "@common";
+import { Button } from '@common'
 
 // Librarys
-import Image from 'react-bootstrap/Image';
-import { useHistory } from 'react-router-dom';
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import Image from 'react-bootstrap/Image'
+import { useHistory } from 'react-router-dom'
 
-const img = require('@assets/img/page-not-found.png').default;
+const img = require('@assets/img/page-not-found.webp')
 
 const imgStyle = {
   width: '20%',
@@ -18,11 +17,11 @@ const imgStyle = {
 }
 
 const PageNotFound = () => {
-  const history = useHistory();
-  
+  const history = useHistory()
+
   const handleGoToHome = useCallback(() => {
     return history.push('/')
-  }, [history]);
+  }, [history])
 
   return (
     <div className="tm-page404 container text-white text-center">
@@ -30,14 +29,9 @@ const PageNotFound = () => {
       <h1>404</h1>
       <h1>Página no encontrada</h1>
       <span>No pudimos encontrar la página, ¿Estás seguro o segura que la url está bien escrita?. Asegúrate que la página existe.</span>
-      <Button
-        icon={faHome}
-        onClick={handleGoToHome}
-        title="Volver al inicio"
-        className="mt-3 py-2 px-4 rounded"
-      />
+      <Button icon="home" onClick={handleGoToHome} title="Volver al inicio" className="mt-3 py-2 px-4 rounded" />
     </div>
-  );
+  )
 }
 
-export default PageNotFound;
+export default PageNotFound

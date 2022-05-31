@@ -1,9 +1,5 @@
-import useForm from "./useForm";
-import useClasses from "./useClasses";
-import useValidations from "./useValidations";
+import useForm from './useForm'
+import useClasses from './useClasses'
+import useValidations from './useValidations'
 
-export {
-	useForm,
-	useClasses,
-	useValidations,
-}
+export { useForm, useClasses, useValidations }

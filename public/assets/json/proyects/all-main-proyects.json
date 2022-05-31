@@ -1,14 +1,13 @@
 [
   {
     "name": "Emprendimiento y Salud",
-    "proyectImg": "img/proyects/emprendimientoysalud.webp",
+    "proyectImg": "img/proyects/emprendimientoysalud-1.webp",
     "url": "https://emprendimientoysalud.com"
   },
   {
     "name": "CMS - Emprendimiento y Salud",
     "proyectImg": "img/proyects/dashboard-emprendimientoysalud.webp",
-    "url": "https://emprendimientoysalud.herokuapp.com",
-    "extraMessage": "You are visiting the \"CMS - Emprendimiento y Salud\" project, you need a user account to log in to the application. Users are controlled by a single administrator user, so we offer you the following user so you can tour the application: email: test.user@gmail.com and password: \"user1234.\""
+    "url": "https://app-emprendimiento-y-salud.herokuapp.com"
   },
   {
     "name": "Nutrición y Salud Personal",
@@ -29,5 +28,10 @@
     "name": "Movies Awards Ballot",
     "proyectImg": "img/proyects/movies-awards-ballot.webp",
     "url": "https://husdady.github.io/movie-awards-ballot"
+  },
+  {
+    "name": "Pokemon Mistery Dungeon",
+    "proyectImg": "img/proyects/pokemon-mistery-dungeon.webp",
+    "url": "http://pokemon-mistery-dungeon.netlify.app"
   }
 ]

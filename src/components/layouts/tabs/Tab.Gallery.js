@@ -1,8 +1,8 @@
 // Librarys
-import Gallery from 'react-grid-gallery';
+import Gallery from 'react-grid-gallery'
 
 // JSON
-import gallery from '@assets/json/gallery/photos';
+import gallery from '@assets/json/gallery/photos'
 
 export default function MyGalleryPhotos() {
   return (
