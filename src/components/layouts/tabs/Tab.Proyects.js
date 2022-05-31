@@ -25,7 +25,7 @@ const renderProyectUrl = ({ url }) => {
     return window.open(url, '_blank')
   }
 
-  return <Button icon="globe" title="See proyects" className="proyect-url position-absolute rounded py-2 text-center text-decoration-none" onClick={goToProyect} />
+  return <Button icon="globe" title="See proyect" className="proyect-url position-absolute rounded py-2 text-center text-decoration-none" onClick={goToProyect} />
 }
 
 const renderProyects = (proyects) => {
